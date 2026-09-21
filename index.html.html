@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+    PROFESSIONAL PORTFOLIO  —  Version 4  ("Executive / Professional" format)
+    Keeps ALL original information  +  adds the sections every real
+    portfolio needs (services, credentials, testimonials, FAQ, CV, form).
+
+    HOW TO USE
+    ----------
+    1. Double-click this file to SEE it in a browser.
+    2. Open the SAME file in Notepad / VS Code to change it.
+    3. Look for markers:   <!-- CHANGE THIS (n): ... -->
+       
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CHANGE THIS (1): browser TAB title -->
+  <title>Anisa Anwar Safia · Student & Trainer</title>
+
+  <!-- CHANGE THIS (2): META DESCRIPTION — what Google shows under your link.
+       Keep it under ~155 characters. -->
+  <meta name="description" content="Portfolio of Anisa Anwar Safia, Student at IER, University of Dhaka — lesson planning, inclusive teaching and learning materials.">
+
+  <!-- CHANGE THIS (3): your name for search engines / social sharing -->
+  <meta name="author" content="Anisa Anwar Safia">
+
+  <!-- FAVICON. CHANGE THIS (4): the letter inside >F< and the colours. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e2233'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' font-weight='bold' fill='%23c0703c' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========================================================================
+       CSS — colours, fonts, spacing, effects.
+       Change the COLOURS here first; everything else follows automatically.
+       ======================================================================== */
+    :root{
+      --ink:        #0e2233;   /* CHANGE THIS (5): main dark colour            */
+      --ink-soft:   #1d3b56;   /* lighter dark (gradients)                      */
+      --accent:     #c0703c;   /* CHANGE THIS (6): accent colour (copper)       */
+      --accent-dk:  #a25a2c;   /* darker accent (hover)                         */
+      --paper:      #f8f6f2;   /* page background                               */
+      --card:       #ffffff;
+      --muted:      #5f6b78;   /* grey text                                     */
+      --line:       #e5e0d8;   /* thin dividers                                 */
+      --tint:       #fdf6f0;   /* soft accent wash for backgrounds              */
+
+      --head: 'Playfair Display', Georgia, serif;
+      --body: 'Inter', system-ui, -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+      --shadow:  0 1px 2px rgba(14,34,51,.04), 0 10px 30px rgba(14,34,51,.06);
+      --shadow-lg:0 20px 50px rgba(14,34,51,.12);
+      --radius: 14px;
+    }
+
+    *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:var(--body);
+      font-size:16px;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; text-decoration:none; }
+    ul{ list-style:none; }
+    section{ scroll-margin-top:86px; }
+
+    .shell{ max-width:1140px; margin:0 auto; padding:0 clamp(18px,4vw,40px); }
+    .sec{ padding:clamp(56px,7vw,96px) 0; }
+
+    /* ---------- section heading ---------- */
+    .sec-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:24px; padding-bottom:20px; margin-bottom:clamp(32px,4vw,50px);
+      border-bottom:1px solid var(--line);
+    }
+    .eyebrow{
+      font-family:var(--mono); font-size:11.5px; font-weight:500;
+      letter-spacing:.18em; text-transform:uppercase; color:var(--accent);
+      display:block; margin-bottom:8px;
+    }
+    .sec-head h2{
+      font-family:var(--head); font-weight:600;
+      font-size:clamp(26px,3.6vw,38px); line-height:1.15; letter-spacing:-.01em;
+    }
+    .sec-head .aside{
+      font-size:14px; color:var(--muted); max-width:34ch; text-align:right;
+      line-height:1.6;
+    }
+    @media (max-width:760px){
+      .sec-head{ flex-direction:column; align-items:flex-start; }
+      .sec-head .aside{ text-align:left; }
+    }
+
+    /* ---------- buttons ---------- */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:9px;
+      font-size:14.5px; font-weight:600; letter-spacing:.01em;
+      padding:13px 24px; border-radius:999px; border:1.5px solid transparent;
+      cursor:pointer; transition:transform .18s, background .18s, color .18s,
+                                        border-color .18s, box-shadow .18s;
+    }
+    .btn:hover{ transform:translateY(-2px); }
+    .btn-primary{ background:var(--ink); color:#fff; box-shadow:0 8px 20px rgba(14,34,51,.18); }
+    .btn-primary:hover{ background:var(--accent); box-shadow:0 10px 24px rgba(192,112,60,.30); }
+    .btn-outline{ background:#fff; color:var(--ink); border-color:var(--line); }
+    .btn-outline:hover{ border-color:var(--ink); }
+    .btn-ghost{ background:transparent; color:var(--ink); border-color:rgba(255,255,255,.4); }
+
+    /* ======================================================================
+       NAVIGATION
+       ====================================================================== */
+    .nav{
+      position:sticky; top:0; z-index:80;
+      background:rgba(248,246,242,.88);
+      backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      max-width:1140px; margin:0 auto; padding:14px clamp(18px,4vw,40px);
+      display:flex; align-items:center; justify-content:space-between; gap:20px;
+    }
+    .logo{
+      font-family:var(--head); font-weight:700; font-size:19px;
+      letter-spacing:-.01em; white-space:nowrap;
+    }
+    .logo b{ color:var(--accent); }
+    .logo small{
+      display:block; font-family:var(--mono); font-size:9.5px; font-weight:400;
+      letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+      line-height:1; margin-top:2px;
+    }
+    .menu{ display:flex; gap:2px; align-items:center; }
+    .menu a{
+      font-size:14px; font-weight:500; color:var(--muted);
+      padding:8px 13px; border-radius:8px; transition:color .18s, background .18s;
+      white-space:nowrap;
+    }
+    .menu a:hover{ color:var(--ink); background:rgba(14,34,51,.05); }
+    .nav .btn{ padding:10px 20px; font-size:13.5px; }
+    @media (max-width:1040px){ .menu{ display:none; } }
+
+    /* ======================================================================
+       HERO
+       ====================================================================== */
+    .hero{
+      position:relative; overflow:hidden;
+      background:
+        radial-gradient(80% 60% at 88% 8%, rgba(192,112,60,.14) 0%, rgba(192,112,60,0) 62%),
+        linear-gradient(180deg, #fffdfa 0%, var(--paper) 100%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero-inner{
+      max-width:1140px; margin:0 auto;
+      padding:clamp(48px,7vw,92px) clamp(18px,4vw,40px) clamp(48px,6vw,84px);
+      display:grid; grid-template-columns:1.15fr .85fr;
+      gap:clamp(34px,5vw,72px); align-items:center;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:9px;
+      font-family:var(--mono); font-size:11.5px; letter-spacing:.1em;
+      text-transform:uppercase; color:var(--ink-soft);
+      background:#fff; border:1px solid var(--line); border-radius:999px;
+      padding:7px 16px; box-shadow:0 2px 8px rgba(14,34,51,.04);
+    }
+    .badge .pulse{
+      width:8px; height:8px; border-radius:50%; background:#3fa96a;
+      box-shadow:0 0 0 0 rgba(63,169,106,.6); animation:pulse 2.2s infinite;
+    }
+    @keyframes pulse{
+      70%{ box-shadow:0 0 0 9px rgba(63,169,106,0); }
+      100%{ box-shadow:0 0 0 0 rgba(63,169,106,0); }
+    }
+    @media (prefers-reduced-motion:reduce){ .badge .pulse{ animation:none; } }
+
+    .hero h1{
+      font-family:var(--head); font-weight:600;
+      font-size:clamp(38px,6vw,64px); line-height:1.05;
+      letter-spacing:-.02em; margin:22px 0 12px;
+    }
+    .hero h1 em{ font-style:italic; color:var(--accent); }
+    .hero .role{
+      font-size:clamp(15px,1.7vw,18px); font-weight:600;
+      letter-spacing:.02em; color:var(--ink-soft);
+    }
+    .hero .lead{ color:var(--muted); margin-top:18px; max-width:54ch; font-size:16.5px; }
+    .hero-btns{ display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
+
+    /* quick fact strip under the buttons */
+    .quick{
+      display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:34px;
+      padding-top:26px; border-top:1px solid var(--line);
+    }
+    .quick div{ font-size:13.5px; color:var(--muted); display:flex; align-items:center; gap:8px; }
+    .quick svg{ flex:0 0 auto; color:var(--accent); }
+
+    /* ---------- hero photo ---------- */
+    .portrait{ position:relative; justify-self:center; width:100%; max-width:380px; }
+    .portrait img{
+      width:100%; aspect-ratio:4/5; object-fit:cover;
+      border-radius:var(--radius); box-shadow:var(--shadow-lg);
+      background:#e9e4dc;
+    }
+    .portrait::before{           /* thin offset frame behind the photo */
+      content:""; position:absolute; inset:14px -14px -14px 14px;
+      border:1.5px solid var(--accent); border-radius:var(--radius);
+      z-index:-1; opacity:.55;
+    }
+    .portrait .card-tag{
+      position:absolute; left:-14px; bottom:-18px;
+      background:#fff; border:1px solid var(--line); border-radius:12px;
+      box-shadow:var(--shadow); padding:12px 18px;
+      display:flex; align-items:center; gap:11px;
+    }
+    .portrait .card-tag .n{
+      font-family:var(--head); font-size:24px; font-weight:700; color:var(--accent); line-height:1;
+    }
+    .portrait .card-tag .t{
+      font-size:11.5px; color:var(--muted); line-height:1.35; max-width:12ch;
+      text-transform:uppercase; letter-spacing:.06em; font-family:var(--mono);
+    }
+
+    @media (max-width:900px){
+      .hero-inner{ grid-template-columns:1fr; }
+      .portrait{ justify-self:start; max-width:330px; }
+    }
+
+    /* ======================================================================
+       LOGO / TRUST STRIP
+       ====================================================================== */
+    .strip{
+      background:#fff; border-bottom:1px solid var(--line);
+      padding:26px 0;
+    }
+    .strip .shell{
+      display:flex; flex-wrap:wrap; align-items:center;
+      justify-content:space-between; gap:18px 34px;
+    }
+    .strip p{
+      font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--muted); white-space:nowrap;
+    }
+    .strip ul{ display:flex; flex-wrap:wrap; gap:14px 34px; align-items:center; }
+    .strip li{
+      font-family:var(--head); font-size:15.5px; font-weight:600;
+      color:var(--ink-soft); opacity:.72; white-space:nowrap;
+    }
+
+    /* ======================================================================
+       ABOUT
+       ====================================================================== */
+    .about-grid{
+      display:grid; grid-template-columns:1.25fr .75fr;
+      gap:clamp(32px,5vw,72px); align-items:start;
+    }
+    .about-grid p{ color:#3d4854; margin-bottom:16px; }
+    .about-grid p:last-of-type{ margin-bottom:0; }
+    .about-grid .hl{ background:linear-gradient(transparent 62%, rgba(192,112,60,.22) 62%); font-weight:600; }
+
+    /* signature line */
+    .sign{
+      margin-top:28px; padding-top:22px; border-top:1px solid var(--line);
+      font-family:var(--head); font-style:italic; font-size:20px; color:var(--accent);
+    }
+    .sign small{
+      display:block; font-family:var(--mono); font-style:normal;
+      font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--muted); margin-top:6px;
+    }
+
+    /* quick facts panel */
+    .facts{
+      background:#fff; border:1px solid var(--line);
+      border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
+    }
+    .facts h3{
+      font-family:var(--mono); font-size:11px; font-weight:600;
+      letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+      padding:16px 22px; border-bottom:1px solid var(--line); background:var(--tint);
+    }
+    .facts dl{ padding:6px 22px 14px; }
+    .facts .f{
+      display:flex; justify-content:space-between; gap:16px;
+      padding:12px 0; border-bottom:1px solid var(--line); font-size:14.5px;
+    }
+    .facts .f:last-child{ border-bottom:none; }
+    .facts dt{ color:var(--muted); font-weight:500; flex:0 0 auto; }
+    .facts dd{ text-align:right; font-weight:600; color:var(--ink); }
+    .facts dd.avail{ color:#2e7d51; }
+
+    /* ======================================================================
+       STATS
+       ====================================================================== */
+    .stats{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+      background:#fff; border:1px solid var(--line);
+      border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
+    }
+    .stat{ padding:28px 22px; border-right:1px solid var(--line); text-align:center; }
+    .stat:last-child{ border-right:none; }
+    .stat .num{
+      font-family:var(--head); font-size:clamp(28px,3.4vw,40px);
+      font-weight:700; line-height:1; color:var(--accent);
+    }
+    .stat .lbl{
+      font-family:var(--mono); font-size:10.5px; letter-spacing:.1em;
+      text-transform:uppercase; color:var(--muted); margin-top:10px; line-height:1.5;
+    }
+    @media (max-width:760px){
+      .stats{ grid-template-columns:1fr 1fr; }
+      .stat:nth-child(2){ border-right:none; }
+      .stat:nth-child(1),.stat:nth-child(2){ border-bottom:1px solid var(--line); }
+    }
+
+    /* ======================================================================
+       SERVICES
+       ====================================================================== */
+    .services{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+    .service{
+      background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+      padding:30px; box-shadow:var(--shadow);
+      transition:transform .22s, box-shadow .22s, border-color .22s;
+    }
+    .service:hover{ transform:translateY(-5px); box-shadow:var(--shadow-lg); border-color:#d8d0c4; }
+    .service .ic{
+      width:46px; height:46px; border-radius:11px;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--tint); color:var(--accent); font-size:21px;
+      margin-bottom:18px;
+    }
+    .service h3{ font-family:var(--head); font-size:21px; font-weight:600; margin-bottom:8px; }
+    .service p{ color:var(--muted); font-size:15px; }
+    .service ul{ margin-top:14px; display:grid; gap:7px; }
+    .service li{
+      font-size:14px; color:#3d4854; padding-left:20px; position:relative;
+    }
+    .service li::before{
+      content:""; position:absolute; left:0; top:9px;
+      width:8px; height:8px; border-radius:2px; background:var(--accent); opacity:.55;
+    }
+    @media (max-width:800px){ .services{ grid-template-columns:1fr; } }
+
+    /* ======================================================================
+       SKILLS
+       ====================================================================== */
+    .skill-groups{ display:grid; grid-template-columns:1fr 1fr; gap:34px; }
+    @media (max-width:760px){ .skill-groups{ grid-template-columns:1fr; } }
+    .skill-group h3{
+      font-family:var(--mono); font-size:11.5px; font-weight:600;
+      letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+      margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--line);
+    }
+    .chips{ display:flex; flex-wrap:wrap; gap:10px; }
+    .chip{
+      background:#fff; border:1px solid var(--line); border-radius:999px;
+      padding:9px 18px; font-size:14px; font-weight:500; color:var(--ink-soft);
+      transition:background .18s, color .18s, border-color .18s, transform .18s;
+    }
+    .chip:hover{ background:var(--ink); color:#fff; border-color:var(--ink); transform:translateY(-2px); }
+
+    /* ======================================================================
+       TIMELINE (Experience + Education + Certifications)
+       ====================================================================== */
+    .timeline{ position:relative; padding-left:32px; }
+    .timeline::before{
+      content:""; position:absolute; left:7px; top:8px; bottom:8px;
+      width:1.5px; background:var(--line);
+    }
+    .tl{
+      position:relative; padding:0 0 34px 0;
+    }
+    .tl:last-child{ padding-bottom:0; }
+    .tl::before{
+      content:""; position:absolute; left:-32px; top:7px;
+      width:16px; height:16px; border-radius:50%;
+      background:#fff; border:2.5px solid var(--accent);
+    }
+    .tl .meta{
+      display:flex; flex-wrap:wrap; align-items:center; gap:12px;
+      margin-bottom:7px;
+    }
+    .tl .when{
+      font-family:var(--mono); font-size:12px; font-weight:500;
+      letter-spacing:.05em; color:var(--accent);
+    }
+    .tl .kind{
+      font-family:var(--mono); font-size:10px; letter-spacing:.12em;
+      text-transform:uppercase; color:var(--muted);
+      border:1px solid var(--line); border-radius:999px; padding:2px 10px;
+      background:#fff;
+    }
+    .tl h3{ font-family:var(--head); font-size:20px; font-weight:600; }
+    .tl .org{ font-size:14px; font-weight:600; color:var(--ink-soft); margin-top:2px; }
+    .tl p{ color:var(--muted); font-size:15px; margin-top:7px; max-width:64ch; }
+
+    /* ======================================================================
+       PROJECT CARDS
+       ====================================================================== */
+    .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+    .card{
+      background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+      overflow:hidden; box-shadow:var(--shadow);
+      display:flex; flex-direction:column;
+      transition:transform .22s, box-shadow .22s;
+    }
+    .card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+    .card .top{
+      padding:26px 26px 0;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .card .ic{
+      width:44px; height:44px; border-radius:11px;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--tint); font-size:20px;
+    }
+    .card .yr{
+      font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; color:var(--muted);
+    }
+    .card .body{ padding:18px 26px 26px; flex:1; display:flex; flex-direction:column; }
+    .card h3{ font-family:var(--head); font-size:21px; font-weight:600; margin-bottom:9px; }
+    .card p{ color:var(--muted); font-size:15px; flex:1; }
+    .tags{ display:flex; flex-wrap:wrap; gap:7px; margin-top:16px; }
+    .tags span{
+      font-family:var(--mono); font-size:10.5px; letter-spacing:.06em;
+      text-transform:uppercase; color:var(--ink-soft);
+      background:var(--paper); border:1px solid var(--line);
+      border-radius:6px; padding:4px 9px;
+    }
+    .card .link{
+      margin-top:18px; font-size:14px; font-weight:600; color:var(--accent);
+      display:inline-flex; align-items:center; gap:6px;
+    }
+    .card .link:hover{ color:var(--accent-dk); text-decoration:underline; }
+    .card.wide{ grid-column:1 / -1; }
+    @media (max-width:800px){ .cards{ grid-template-columns:1fr; } }
+
+    /* ======================================================================
+       TESTIMONIALS
+       ====================================================================== */
+    .quotes{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    @media (max-width:900px){ .quotes{ grid-template-columns:1fr; } }
+    .quote{
+      background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+      padding:30px 28px; box-shadow:var(--shadow);
+      display:flex; flex-direction:column;
+    }
+    .quote .mark{
+      font-family:var(--head); font-size:52px; line-height:.7;
+      color:var(--accent); opacity:.28; margin-bottom:14px;
+    }
+    .quote blockquote{ font-size:15.5px; color:#3d4854; flex:1; font-style:italic; }
+    .quote .who{
+      margin-top:22px; padding-top:18px; border-top:1px solid var(--line);
+      display:flex; align-items:center; gap:13px;
+    }
+    .quote .who img{
+      width:44px; height:44px; border-radius:50%; object-fit:cover; flex:0 0 auto;
+      background:#e9e4dc;
+    }
+    .quote .who .nm{ font-size:14.5px; font-weight:700; line-height:1.3; }
+    .quote .who .rl{ font-size:12.5px; color:var(--muted); line-height:1.4; }
+
+    /* ======================================================================
+       VIDEO
+       ====================================================================== */
+    .video-frame{
+      border-radius:var(--radius); overflow:hidden;
+      border:1px solid var(--line); box-shadow:var(--shadow-lg); background:#000;
+    }
+    .video-frame iframe{ width:100%; aspect-ratio:16/9; border:0; display:block; }
+
+    /* ======================================================================
+       FAQ  (uses native <details> — no JavaScript needed)
+       ====================================================================== */
+    .faq{ border-top:1px solid var(--line); }
+    .faq details{ border-bottom:1px solid var(--line); }
+    .faq summary{
+      cursor:pointer; list-style:none;
+      padding:22px 42px 22px 0; position:relative;
+      font-family:var(--head); font-size:19px; font-weight:600; color:var(--ink);
+      transition:color .18s;
+    }
+    .faq summary::-webkit-details-marker{ display:none; }
+    .faq summary:hover{ color:var(--accent); }
+    .faq summary::after{
+      content:"+"; position:absolute; right:6px; top:50%; transform:translateY(-50%);
+      font-family:var(--body); font-size:24px; font-weight:400; color:var(--accent);
+      transition:transform .2s;
+    }
+    .faq details[open] summary::after{ content:"–"; }
+    .faq .answer{ padding:0 42px 24px 0; color:var(--muted); font-size:15.5px; max-width:70ch; }
+
+    /* ======================================================================
+       CONTACT
+       ====================================================================== */
+    .contact-wrap{
+      background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow:var(--shadow-lg); overflow:hidden;
+      display:grid; grid-template-columns:.85fr 1.15fr;
+    }
+    @media (max-width:860px){ .contact-wrap{ grid-template-columns:1fr; } }
+
+    .contact-info{
+      background:linear-gradient(160deg, var(--ink) 0%, var(--ink-soft) 100%);
+      color:#fff; padding:clamp(32px,4vw,46px);
+      display:flex; flex-direction:column;
+    }
+    .contact-info h3{
+      font-family:var(--head); font-size:26px; font-weight:600; line-height:1.2;
+    }
+    .contact-info > p{ color:#b9c6d3; font-size:15px; margin-top:12px; }
+    .contact-info ul{ margin-top:28px; display:grid; gap:18px; }
+    .contact-info li{ display:flex; gap:14px; align-items:flex-start; font-size:14.5px; }
+    .contact-info li .ic{
+      width:36px; height:36px; border-radius:9px; flex:0 0 auto;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(255,255,255,.10); font-size:15px;
+    }
+    .contact-info li .k{
+      font-family:var(--mono); font-size:10.5px; letter-spacing:.12em;
+      text-transform:uppercase; color:#8fa3b6; display:block; margin-bottom:2px;
+    }
+    .contact-info li a:hover{ color:var(--accent); text-decoration:underline; }
+
+    .contact-info .socials{
+      margin-top:auto; padding-top:32px; display:flex; flex-wrap:wrap; gap:9px;
+    }
+    .contact-info .socials a{
+      font-family:var(--mono); font-size:11px; letter-spacing:.1em;
+      text-transform:uppercase; border:1px solid rgba(255,255,255,.28);
+      border-radius:999px; padding:8px 15px; transition:.18s;
+    }
+    .contact-info .socials a:hover{
+      background:var(--accent); border-color:var(--accent); transform:translateY(-2px);
+    }
+
+    /* the form */
+    .form{ padding:clamp(32px,4vw,46px); }
+    .form h3{ font-family:var(--head); font-size:24px; font-weight:600; margin-bottom:6px; }
+    .form > p{ color:var(--muted); font-size:14.5px; margin-bottom:26px; }
+    .field{ margin-bottom:18px; }
+    .field label{
+      display:block; font-size:13px; font-weight:600; margin-bottom:7px;
+      color:var(--ink-soft);
+    }
+    .field input, .field select, .field textarea{
+      width:100%; font-family:var(--body); font-size:15px; color:var(--ink);
+      background:var(--paper); border:1.5px solid var(--line);
+      border-radius:10px; padding:13px 15px;
+      transition:border-color .18s, background .18s, box-shadow .18s;
+    }
+    .field textarea{ resize:vertical; min-height:130px; }
+    .field input:focus, .field select:focus, .field textarea:focus{
+      outline:none; background:#fff; border-color:var(--accent);
+      box-shadow:0 0 0 4px rgba(192,112,60,.12);
+    }
+    .two{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media (max-width:560px){ .two{ grid-template-columns:1fr; } }
+    .form .btn{ width:100%; margin-top:6px; }
+    .form .note{
+      font-size:12.5px; color:var(--muted); margin-top:14px; text-align:center;
+    }
+
+    /* ======================================================================
+       CALL TO ACTION BAR  +  FOOTER
+       ====================================================================== */
+    .cta-bar{
+      background:var(--ink); color:#fff; border-radius:var(--radius);
+      padding:clamp(34px,5vw,52px); text-align:center;
+    }
+    .cta-bar h2{
+      font-family:var(--head); font-size:clamp(24px,3.4vw,36px); font-weight:600;
+    }
+    .cta-bar p{ color:#b9c6d3; max-width:46ch; margin:12px auto 26px; font-size:15.5px; }
+    .cta-bar .btns{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+    .cta-bar .btn-primary{ background:var(--accent); }
+    .cta-bar .btn-primary:hover{ background:#d98452; }
+    .cta-bar .btn-outline{
+      background:transparent; color:#fff; border-color:rgba(255,255,255,.35);
+    }
+    .cta-bar .btn-outline:hover{ border-color:#fff; background:rgba(255,255,255,.08); }
+
+    .footer{ border-top:1px solid var(--line); padding:40px 0 46px; margin-top:clamp(56px,7vw,90px); }
+    .footer .top{
+      display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px;
+      padding-bottom:32px; border-bottom:1px solid var(--line);
+    }
+    @media (max-width:760px){ .footer .top{ grid-template-columns:1fr; gap:26px; } }
+    .footer .about-f p{ color:var(--muted); font-size:14px; margin-top:12px; max-width:40ch; }
+    .footer h4{
+      font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--muted); margin-bottom:14px;
+    }
+    .footer ul{ display:grid; gap:9px; }
+    .footer ul a{ font-size:14px; color:#3d4854; }
+    .footer ul a:hover{ color:var(--accent); }
+    .footer .base{
+      display:flex; flex-wrap:wrap; gap:12px;
+      justify-content:space-between; align-items:center;
+      padding-top:24px; font-size:13px; color:var(--muted);
+    }
+
+    /* small helper */
+    .sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+  </style>
+</head>
+
+<body>
+
+<!-- ==================================================================
+     NAVIGATION
+     ================================================================== -->
+<header class="nav">
+  <div class="nav-inner">
+
+    <!-- CHANGE THIS (7): your name + the small line under it -->
+    <a class="logo" href="#top">
+      Anisa Anwar Safia<b>.</b>
+      <small>Student</small>
+    </a>
+
+    <!-- Leave the #names alone — they jump to the sections below -->
+    <nav class="menu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <!-- CHANGE THIS (8): put your CV file in the same folder and name it cv.pdf -->
+    <a class="btn btn-primary" href="cv.pdf" download>Download CV</a>
+
+  </div>
+</header>
+
+<!-- ==================================================================
+     HERO
+     ================================================================== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+
+    <div>
+      <!-- CHANGE THIS (9): your availability line -->
+      <span class="badge"><span class="pulse"></span> Available for teaching &amp; collaboration</span>
+
+      <!-- CHANGE THIS (10): your name.
+           Text inside <em>...</em> turns copper + italic. -->
+      <h1>Anisa Anwar <em>Safia</em></h1>
+
+      <!-- CHANGE THIS (11): your professional title -->
+      <p class="role">Trainer &nbsp;·&nbsp; Training Session Designer &nbsp;·&nbsp; M.Ed. Student</p>
+
+      <!-- CHANGE THIS (12): your short professional summary -->
+      <p class="lead">
+        M.Ed. student at the Institute of Education and Research, University of Dhaka. I design joyful, inclusive lessons that help every child understand, participate and feel confident — drawing on stories, visuals and hands-on activities. I also run training sessions for educators and parents, equipping them with practical strategies to support children's learning.
+      </p>
+
+      <div class="hero-btns">
+        <!-- CHANGE THIS (13): your email after mailto: -->
+        <a class="btn btn-primary" href="mailto:anisaanwars18@gmail.com">✉ Get in touch</a>
+        <!-- CHANGE THIS (14): link to your LinkedIn or CV, or leave # -->
+        <a class="btn btn-outline" href="#work">View my work</a>
+      </div>
+
+      <!-- CHANGE THIS (15): three quick facts under the buttons -->
+      <div class="quick">
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Dhaka, Bangladesh
+        </div>
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+          Bangla &amp; English
+        </div>
+        <div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          IER, University of Dhaka
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- PHOTO ---------- -->
+    <div class="portrait">
+      <!--
+        CHANGE THIS (16): YOUR PHOTO.
+        Easiest (offline): save your photo in the SAME FOLDER as this file,
+        then replace the long src="..." with just  src="myphoto.jpg"
+        Online: upload to https://postimages.org and paste the direct link.
+      -->
+      <img src="M.Ed. student at the Institute of Education and Research, University of Dhaka. I design joyful, inclusive lessons that help every child understand, participate and feel confident — drawing on stories, visuals and hands-on activities. I also run training sessions for educators and parents, equipping them with practical strategies to support children's learning."
+           alt="Portrait of Anisa Anwar Safia">
+
+      <!-- CHANGE THIS (17): the small floating badge on the photo -->
+      <div class="card-tag">
+        <span class="n">120+</span>
+        <span class="t">Students taught</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================================================================
+     TRUST STRIP  (institutions / places you have worked with)
+     ================================================================== -->
+<div class="strip">
+  <div class="shell">
+    <!-- CHANGE THIS (18): the small label on the left -->
+    <p>Experience with</p>
+    <!-- CHANGE THIS (19): up to 4 organisation names. Delete or add <li> items. -->
+    <ul>
+      <li>University of Dhaka</li>
+      <li>IER Teaching Practicum</li>
+      <li>Local Primary School</li>
+      <li>Community Learning Centre</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================================================================
+     ABOUT
+     ================================================================== -->
+<section class="sec" id="about">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">01 — Introduction</span>
+        <h2>About Me</h2>
+      </div>
+      <p class="aside">A short introduction to who I am and how I teach.</p>
+    </div>
+
+    <div class="about-grid">
+
+      <div>
+        <!-- CHANGE THIS (20): 3–4 sentences about yourself.
+             Anything inside <span class="hl">...</span> gets highlighted. -->
+        <p>
+          Hello! I'm a trainee teacher at the <span class="hl">Institute of Education and Research</span>,
+          University of Dhaka, focused on early childhood education and inclusive classrooms.
+        </p>
+        <p>
+          I love turning difficult ideas into simple, playful lessons — using stories, visuals
+          and hands-on activities that help every student feel confident. My teaching approach
+          is calm, structured and built around the child.
+        </p>
+        <p>
+          Right now I'm looking for opportunities to teach, design learning materials, and
+          collaborate with schools and educators on projects that make classrooms kinder and
+          more effective.
+        </p>
+
+        <!-- CHANGE THIS (21): your closing line + how your name is written -->
+        <p class="sign">
+          Let's build better classrooms together.
+          <small>Fatima Rahman · Educator</small>
+        </p>
+      </div>
+
+      <!-- QUICK FACTS PANEL -->
+      <aside class="facts">
+        <h3>Quick Facts</h3>
+        <dl>
+          <!-- CHANGE THIS (22): each row — the label (dt) and the value (dd).
+               Add or delete a whole <div class="f"> ... </div> block. -->
+          <div class="f"><dt>Location</dt><dd>Dhaka, Bangladesh</dd></div>
+          <div class="f"><dt>Focus</dt><dd>Early Childhood</dd></div>
+          <div class="f"><dt>Languages</dt><dd>Bangla, English</dd></div>
+          <div class="f"><dt>Experience</dt><dd>3+ years study</dd></div>
+          <div class="f"><dt>Availability</dt><dd class="avail">Open to work</dd></div>
+        </dl>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     STATS
+     ================================================================== -->
+<section class="sec" style="padding-top:0;">
+  <div class="shell">
+    <!-- CHANGE THIS (23): your four numbers + labels -->
+    <div class="stats">
+      <div class="stat"><div class="num">3+</div><div class="lbl">Years Studying Education</div></div>
+      <div class="stat"><div class="num">120</div><div class="lbl">Students Taught</div></div>
+      <div class="stat"><div class="num">15</div><div class="lbl">Lesson Plans Made</div></div>
+      <div class="stat"><div class="num">4</div><div class="lbl">Workshops Attended</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     SERVICES  —  what you can be hired to do
+     ================================================================== -->
+<section class="sec" id="services" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">02 — What I offer</span>
+        <h2>Services</h2>
+      </div>
+      <p class="aside">Concrete ways I can help a school, teacher or learning project.</p>
+    </div>
+
+    <!--
+      CHANGE THIS (24): each .service block is one thing you offer.
+      Change the icon (emoji), the title, the sentence, and the 3 bullet points.
+      Copy a whole .service block to add more; delete one to remove it.
+    -->
+    <div class="services">
+
+      <div class="service">
+        <div class="ic">📘</div>
+        <h3>Lesson Planning</h3>
+        <p>Clear, age-appropriate lesson plans built around real classroom time and real children.</p>
+        <ul>
+          <li>Objectives mapped to outcomes</li>
+          <li>Ready-to-use activity sheets</li>
+          <li>Time-managed 40-minute structure</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div class="ic">🧑‍🏫</div>
+        <h3>Classroom Teaching</h3>
+        <p>Support teaching, practicum placement or short-term cover for primary classes.</p>
+        <ul>
+          <li>Reading &amp; language support</li>
+          <li>Group and pair work design</li>
+          <li>Positive behaviour management</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div class="ic">🎨</div>
+        <h3>Learning Materials</h3>
+        <p>Colourful, low-cost teaching aids that work even in classrooms with few resources.</p>
+        <ul>
+          <li>Flashcards &amp; alphabet charts</li>
+          <li>Printable worksheets</li>
+          <li>Classroom display sets</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div class="ic">📝</div>
+        <h3>Assessment &amp; Feedback</h3>
+        <p>Friendly, low-stress ways to check what children have actually learned.</p>
+        <ul>
+          <li>Exit cards &amp; oral check-ins</li>
+          <li>Simple marking rubrics</li>
+          <li>Progress tracking sheets</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     SKILLS
+     ================================================================== -->
+<section class="sec" id="skills" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">03 — Capabilities</span>
+        <h2>Skills</h2>
+      </div>
+      <p class="aside">Grouped so it's easy to scan in ten seconds.</p>
+    </div>
+
+    <div class="skill-groups">
+
+      <div class="skill-group">
+        <h3>Teaching &amp; Pedagogy</h3>
+        <!-- CHANGE THIS (25): your teaching skills as chips -->
+        <div class="chips">
+          <span class="chip">Lesson Planning</span>
+          <span class="chip">Classroom Management</span>
+          <span class="chip">Curriculum Design</span>
+          <span class="chip">Child Psychology</span>
+          <span class="chip">Storytelling</span>
+          <span class="chip">Inclusive Teaching</span>
+          <span class="chip">Assessment &amp; Feedback</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Tools &amp; Other</h3>
+        <!-- CHANGE THIS (26): your technical / soft skills as chips -->
+        <div class="chips">
+          <span class="chip">MS Office</span>
+          <span class="chip">Google Classroom</span>
+          <span class="chip">Canva</span>
+          <span class="chip">Worksheet Design</span>
+          <span class="chip">Basic HTML &amp; CSS</span>
+          <span class="chip">Report Writing</span>
+          <span class="chip">Teamwork</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     EXPERIENCE + EDUCATION  (one combined timeline)
+     ================================================================== -->
+<section class="sec" id="experience" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">04 — Background</span>
+        <h2>Experience &amp; Education</h2>
+      </div>
+      <p class="aside">Most recent first.</p>
+    </div>
+
+    <!--
+      CHANGE THIS (27): each .tl block is ONE entry.
+      - .when  = the date
+      - .kind  = the small tag ("Education" / "Experience" / "Volunteering")
+      - h3     = the role or degree
+      - .org   = the school / organisation
+      - p      = one or two lines about what you did
+      Copy a whole .tl block to add another; delete one to remove it.
+      Keep them in date order (newest at the top).
+    -->
+    <div class="timeline">
+
+      <div class="tl">
+        <div class="meta">
+          <span class="when">2023 – Present</span>
+          <span class="kind">Education</span>
+        </div>
+        <h3>B.Ed., Institute of Education and Research</h3>
+        <p class="org">University of Dhaka</p>
+        <p>Studying curriculum, pedagogy and child development, with a focus on early childhood and inclusive classrooms.</p>
+      </div>
+
+      <div class="tl">
+        <div class="meta">
+          <span class="when">2024</span>
+          <span class="kind">Experience</span>
+        </div>
+        <h3>Teaching Practicum</h3>
+        <p class="org">Local Primary School, Dhaka</p>
+        <p>Ran a two-week reading programme for Class 3 — daily guided reading, paired practice and a simple fluency tracker.</p>
+      </div>
+
+      <div class="tl">
+        <div class="meta">
+          <span class="when">2023</span>
+          <span class="kind">Volunteering</span>
+        </div>
+        <h3>Volunteer Tutor</h3>
+        <p class="org">Community Learning Centre</p>
+        <p>Taught weekend English classes to underprivileged children, focusing on confidence and spoken practice.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     CERTIFICATIONS & TRAINING
+     ================================================================== -->
+<section class="sec" id="credentials" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">05 — Credentials</span>
+        <h2>Certifications &amp; Training</h2>
+      </div>
+      <p class="aside">Courses, workshops and certificates that back up the skills above.</p>
+    </div>
+
+    <!--
+      CHANGE THIS (28): each .card here is one certificate or workshop.
+      Delete the whole grid if you have none yet — or keep one and fill it in.
+    -->
+    <div class="cards">
+
+      <div class="card">
+        <div class="top">
+          <div class="ic">🎓</div>
+          <span class="yr">2024</span>
+        </div>
+        <div class="body">
+          <h3>Inclusive Education Workshop</h3>
+          <p>Practical strategies for supporting learners with different needs in a regular classroom.</p>
+          <a class="link" href="#">View certificate →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div class="ic">📖</div>
+          <span class="yr">2024</span>
+        </div>
+        <div class="body">
+          <h3>Early Literacy Training</h3>
+          <p>Short course on phonics, guided reading and building reading fluency in the early years.</p>
+          <a class="link" href="#">View certificate →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     WORK / PROJECTS
+     ================================================================== -->
+<section class="sec" id="work" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">06 — Portfolio</span>
+        <h2>Selected Work</h2>
+      </div>
+      <p class="aside">Projects, materials and research I've produced.</p>
+    </div>
+
+    <!--
+      CHANGE THIS (29): each .card is ONE project.
+      Change the emoji, the year, the title, the description, the tag chips
+      and the link. Add "wide" to a card's class to make it span the full row.
+      Copy a whole .card block to add more.
+    -->
+    <div class="cards">
+
+      <div class="card">
+        <div class="top">
+          <div class="ic">📚</div>
+          <span class="yr">2024</span>
+        </div>
+        <div class="body">
+          <h3>Reading Programme</h3>
+          <p>A structured two-week plan that measurably improved reading fluency in young learners, with daily worksheets and a simple progress tracker.</p>
+          <div class="tags"><span>Lesson Design</span><span>Literacy</span></div>
+          <a class="link" href="#">View details →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div class="ic">🔬</div>
+          <span class="yr">2024</span>
+        </div>
+        <div class="body">
+          <h3>Research Assignment</h3>
+          <p>Studied how storytelling boosts vocabulary in early childhood education, with classroom observations and a short written report.</p>
+          <div class="tags"><span>Research</span><span>Child Development</span></div>
+          <a class="link" href="#">Read summary →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div class="ic">🎨</div>
+          <span class="yr">2023</span>
+        </div>
+        <div class="body">
+          <h3>Classroom Materials</h3>
+          <p>Designed colourful flashcards, alphabet charts and worksheets for teaching early reading in low-resource classrooms.</p>
+          <div class="tags"><span>Design</span><span>Printables</span></div>
+          <a class="link" href="#">See samples →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="top">
+          <div class="ic">🧩</div>
+          <span class="yr">2023</span>
+        </div>
+        <div class="body">
+          <h3>Learning Games</h3>
+          <p>Created simple group games that make maths practice fun and social — no special equipment needed.</p>
+          <div class="tags"><span>Maths</span><span>Group Work</span></div>
+          <a class="link" href="#">Learn more →</a>
+        </div>
+      </div>
+
+      <div class="card wide">
+        <div class="top">
+          <div class="ic">📝</div>
+          <span class="yr">2025</span>
+        </div>
+        <div class="body">
+          <h3>Assessment Toolkit</h3>
+          <p>A set of friendly, low-stress ways to check what children have really learned — quick exit cards, oral check-ins and simple rubrics that don't scare the class. Designed to be printed and used the same day.</p>
+          <div class="tags"><span>Assessment</span><span>Rubrics</span><span>Printable</span></div>
+          <a class="link" href="#">Open toolkit →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     TESTIMONIALS
+     ================================================================== -->
+<section class="sec" id="testimonials" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">07 — Kind words</span>
+        <h2>Testimonials</h2>
+      </div>
+      <p class="aside">What supervisors, teachers and mentors say.</p>
+    </div>
+
+    <!--
+      CHANGE THIS (30): each .quote is one testimonial.
+      Change the quote, the photo (or leave the placeholder), the name and the role.
+      Ask a supervisor, teacher or classmate for a short line — one or two sentences is plenty.
+    -->
+    <div class="quotes">
+
+      <div class="quote">
+        <div class="mark">"</div>
+        <blockquote>Fatima planned her reading sessions carefully and the children genuinely looked forward to them. Her classroom manner is calm and encouraging.</blockquote>
+        <div class="who">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Crect width='88' height='88' fill='%23e9e4dc'/%3E%3Ccircle cx='44' cy='34' r='15' fill='%23c0703c'/%3E%3Ccircle cx='44' cy='76' r='26' fill='%23c0703c'/%3E%3C/svg%3E" alt="">
+          <div>
+            <div class="nm">Supervisor Name</div>
+            <div class="rl">Practicum Supervisor, IER</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote">
+        <div class="mark">"</div>
+        <blockquote>The materials she designed were simple, cheap and effective. We still use her flashcards in our Class 1 room.</blockquote>
+        <div class="who">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Crect width='88' height='88' fill='%23e9e4dc'/%3E%3Ccircle cx='44' cy='34' r='15' fill='%231d3b56'/%3E%3Ccircle cx='44' cy='76' r='26' fill='%231d3b56'/%3E%3C/svg%3E" alt="">
+          <div>
+            <div class="nm">Teacher Name</div>
+            <div class="rl">Class Teacher, Primary School</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote">
+        <div class="mark">"</div>
+        <blockquote>Reliable, organised and genuinely interested in the children. She was one of our most committed volunteer tutors.</blockquote>
+        <div class="who">
+          <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Crect width='88' height='88' fill='%23e9e4dc'/%3E%3Ccircle cx='44' cy='34' r='15' fill='%235f6b78'/%3E%3Ccircle cx='44' cy='76' r='26' fill='%235f6b78'/%3E%3C/svg%3E" alt="">
+          <div>
+            <div class="nm">Coordinator Name</div>
+            <div class="rl">Community Learning Centre</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     VIDEO
+     ================================================================== -->
+<section class="sec" id="video" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">08 — Watch</span>
+        <h2>A Video I Made</h2>
+      </div>
+      <p class="aside">A short clip that shows my work in practice.</p>
+    </div>
+
+    <!--
+      CHANGE THIS (31): SHOW A YOUTUBE VIDEO.
+      In a link like  youtube.com/watch?v=ABC123 , copy the code after "v="
+      and put it after  /embed/  below. So  watch?v=dQw4w9WgXcQ  becomes
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    -->
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/Cqf9Ox2vHRc"
+              title="My video" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     FAQ
+     ================================================================== -->
+<section class="sec" id="faq" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">09 — Good to know</span>
+        <h2>Frequently Asked</h2>
+      </div>
+      <p class="aside">The questions people usually ask before hiring or collaborating.</p>
+    </div>
+
+    <!--
+      CHANGE THIS (32): each <details> is one question.
+      <summary> is the question; the <p class="answer"> is the reply.
+      Copy a whole <details> block to add more; delete one to remove it.
+    -->
+    <div class="faq">
+
+      <details open>
+        <summary>What kind of work are you looking for?</summary>
+        <p class="answer">Teaching and teaching-support roles in primary or early-years settings, plus freelance curriculum design, lesson planning and learning-material design.</p>
+      </details>
+
+      <details>
+        <summary>Are you available for part-time or remote work?</summary>
+        <p class="answer">Yes. I'm currently studying, so part-time, weekend, remote and short-term project work all fit well around my schedule.</p>
+      </details>
+
+      <details>
+        <summary>Can you design materials for a low-resource classroom?</summary>
+        <p class="answer">Absolutely — that's my favourite kind of work. Everything I design can be printed in black and white and made from cheap or recycled materials.</p>
+      </details>
+
+      <details>
+        <summary>How quickly can you start?</summary>
+        <p class="answer">Usually within one to two weeks, depending on the scope of the project. Get in touch and we can work out a timeline together.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     CONTACT
+     ================================================================== -->
+<section class="sec" id="contact" style="padding-top:0;">
+  <div class="shell">
+
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">10 — Get in touch</span>
+        <h2>Contact</h2>
+      </div>
+      <p class="aside">I usually reply within one or two days.</p>
+    </div>
+
+    <div class="contact-wrap">
+
+      <!-- ---------- LEFT: your details ---------- -->
+      <div class="contact-info">
+        <h3>Let's talk about teaching.</h3>
+        <!-- CHANGE THIS (33): a short friendly line -->
+        <p>Whether it's a teaching role, a collaboration, or just a question — I'd love to hear from you.</p>
+
+        <ul>
+          <!-- CHANGE THIS (34): your email (twice — the text and the href) -->
+          <li>
+            <span class="ic">✉</span>
+            <span>
+              <span class="k">Email</span>
+              <a href="mailto:fatima@example.com">fatima@example.com</a>
+            </span>
+          </li>
+          <!-- CHANGE THIS (35): your phone number, or delete this whole <li> -->
+          <li>
+            <span class="ic">☎</span>
+            <span>
+              <span class="k">Phone</span>
+              <a href="tel:+8801000000000">+880 1000 000000</a>
+            </span>
+          </li>
+          <!-- CHANGE THIS (36): your location -->
+          <li>
+            <span class="ic">📍</span>
+            <span>
+              <span class="k">Location</span>
+              Dhaka, Bangladesh
+            </span>
+          </li>
+          <!-- CHANGE THIS (37): your typical reply time -->
+          <li>
+            <span class="ic">⏱</span>
+            <span>
+              <span class="k">Response time</span>
+              Usually within 1–2 days
+            </span>
+          </li>
+        </ul>
+
+        <!--
+          CHANGE THIS (38): YOUR SOCIAL / PROFILE LINKS.
+          Put your real profile addresses inside href="...".
+          Delete any you don't use.
+        -->
+        <div class="socials">
+          <a href="https://www.linkedin.com">LinkedIn</a>
+          <a href="https://www.facebook.com">Facebook</a>
+          <a href="https://www.youtube.com">YouTube</a>
+          <a href="mailto:fatima@example.com">Email</a>
+        </div>
+      </div>
+
+      <!-- ---------- RIGHT: the form ---------- -->
+      <div class="form">
+        <h3>Send a message</h3>
+        <p>Fill this in and your email app will open with the message ready to send.</p>
+
+        <!--
+          CHANGE THIS (39): in action="..." put YOUR email after mailto:
+          NOTE: this simple version opens the visitor's email app. If you want
+          the form to submit silently, sign up free at https://formspree.io
+          and replace the whole action="..." with your Formspree URL.
+        -->
+        <form action="mailto:fatima@example.com" method="post" enctype="text/plain">
+
+          <div class="two">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" placeholder="e.g. Ayesha Khan" required>
+            </div>
+            <div class="field">
+              <label for="email">Your email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="subject">What is this about?</label>
+            <select id="subject" name="subject">
+              <option>Teaching role</option>
+              <option>Curriculum / lesson design</option>
+              <option>Learning materials</option>
+              <option>Collaboration</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me a little about what you need…" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">✉ Send message</button>
+          <p class="note">Or email me directly at <a href="mailto:fatima@example.com" style="color:var(--accent);font-weight:600;">fatima@example.com</a></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     CALL TO ACTION BAR
+     ================================================================== -->
+<section class="sec" style="padding-top:0;">
+  <div class="shell">
+    <div class="cta-bar">
+      <!-- CHANGE THIS (40): the closing call to action -->
+      <h2>Ready to work together?</h2>
+      <p>I'm currently open to teaching roles, practicum placements and freelance curriculum work.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="mailto:fatima@example.com">✉ Email me</a>
+        <a class="btn btn-outline" href="cv.pdf" download>Download my CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     FOOTER
+     ================================================================== -->
+<footer class="footer">
+  <div class="shell">
+
+    <div class="top">
+
+      <div class="about-f">
+        <!-- CHANGE THIS (41): your name in the footer -->
+        <a class="logo" href="#top">Fatima<b>.</b><small>Educator</small></a>
+        <!-- CHANGE THIS (42): a one-line footer description -->
+        <p>Educator and curriculum designer based in Dhaka, building joyful and inclusive classrooms.</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Elsewhere</h4>
+        <!-- CHANGE THIS (43): your social links again -->
+        <ul>
+          <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com">Facebook</a></li>
+          <li><a href="https://www.youtube.com">YouTube</a></li>
+          <li><a href="mailto:fatima@example.com">Email</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="base">
+      <!-- CHANGE THIS (44): the copyright line -->
+      <span>© 2025 Fatima Rahman · Built with HTML &amp; CSS at IER, University of Dhaka</span>
+      <span><a href="#top" style="color:var(--accent);font-weight:600;">Back to top ↑</a></span>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
